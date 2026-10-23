@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Macedo e Jonathan Santos - Candidatura Oficial</title>
+    
+    <!-- Fontes Premium do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Paleta Premium - Baseada na FAB mas com tons mais elegantes e modernos */
+            --primary-dark: #071f36;
+            --primary: #0a3055;
+            --primary-light: #154c79;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --accent-green: #1b5e20;
+            --bg-page: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border-soft: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 25px -3px rgba(10, 48, 85, 0.1), 0 4px 6px -2px rgba(10, 48, 85, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-lg: 12px;
+            --radius-md: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            color: var(--text-main); 
+            line-height: 1.7; 
+            background-color: var(--bg-page);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 { 
+            font-family: 'Montserrat', sans-serif; 
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+
+        /* Top Bar Elegante */
+        .gov-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--accent-green) 40%, var(--accent-gold) 60%, var(--accent-gold) 100%);
+            width: 100%;
+        }
+
+        /* Navbar com Glassmorphism (Efeito Vidro Premium) */
+        header { 
+            background: rgba(7, 31, 54, 0.95); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--surface); 
+            padding: 20px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: var(--shadow-md);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            color: var(--surface);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { color: var(--accent-gold); }
+        .logo i { color: var(--accent-gold); font-size: 1.2rem; }
+        
+        nav { display: flex; gap: 25px; }
+        nav a { 
+            color: rgba(255, 255, 255, 0.85); 
+            text-decoration: none; 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        nav a:hover { color: var(--accent-gold); }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 15px; }
+        }
+
+        /* Seções Gerais */
+        section { padding: 100px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        /* Hero Section Premium */
+        .hero { 
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--surface);
+            padding: 140px 20px; 
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        /* Padrão de fundo sutil */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h2 { 
+            font-size: 3.5rem; 
+            font-weight: 800;
+            margin-bottom: 25px; 
+            letter-spacing: -1px; 
+            color: var(--surface);
+            line-height: 1.1;
+        }
+        
+        .hero h2 span {
+            color: var(--accent-gold);
+        }
+
+        .hero p { 
+            font-size: 1.25rem; 
+            font-weight: 300; 
+            color: rgba(255,255,255,0.9);
+            max-width: 750px; 
+            margin: 0 auto; 
+            line-height: 1.8;
+        }
+
+        /* Botão Premium */
+        .btn { 
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--accent-green); 
+            color: var(--surface); 
+            padding: 16px 36px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            margin-top: 40px; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(27, 94, 32, 0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .btn:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(27, 94, 32, 0.3);
+            background: #144917; 
+        }
+
+        /* Títulos de Seção Premium */
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 25px auto 0;
+            font-weight: 300;
+        }
+
+        /* Cards de Perfil */
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .profile-card { 
+            background: var(--surface); 
+            padding: 50px 40px; 
+            border-radius: var(--radius-lg); 
+            box-shadow: var(--shadow-md); 
+            border: 1px solid var(--border-soft);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--primary);
+        }
+
+        .profile-card:hover { 
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .profile-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-page);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .profile-title h3 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+        
+        .role-badge {
+            display: inline-block;
+            background: var(--accent-gold-light);
+            color: #8a6d1c;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .time-badge {
+            display: table;
+            background: var(--primary);
+            color: var(--surface);
+            padding: 6px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .profile-card p {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .profile-card ul { 
+            padding-left: 20px; 
+            margin-bottom: 20px; 
+            color: var(--text-muted);
+        }
+        .profile-card li { margin-bottom: 10px; }
+        .highlight { color: var(--primary); font-weight: 600; display: block; margin-top: 25px; margin-bottom: 10px;}
+
+        /* Cards de Propostas (Modern Grid Layout) */
+        .proposals-section {
+            background-color: var(--surface);
+            border-top: 1px solid var(--border-soft);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .proposals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .proposal-card {
+            background: var(--bg-page);
+            padding: 40px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .proposal-card:hover {
+            background: var(--surface);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(10, 48, 85, 0.1);
+        }
+
+        .proposal-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .proposal-card:hover .proposal-icon-wrapper {
+            background: var(--primary);
+            color: var(--surface);
+            transform: scale(1.05);
+        }
+
+        .proposal-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .proposal-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .proposal-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: auto;
+        }
+
+        .proposal-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .proposal-card li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-green);
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 768px) {
+            .proposals-grid { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 2.5rem; }
+        }
+
+        /* Footer */
+        footer { 
+            background: var(--primary-dark); 
+            color: rgba(255,255,255,0.6); 
+            text-align: center; 
+            padding: 50px 20px; 
+            font-size: 0.95rem; 
+        }
+        footer p { margin: 5px 0; }
+        footer strong { color: var(--accent-gold); font-weight: 600;}
+        
+        /* Animações */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gov-bar"></div>
+
+<header>
+    <div class="nav-container">
+        <a href="#home" class="logo">
+            <i class="fas fa-shield-alt"></i> MACEDO <span>&</span> JONATHAN
+        </a>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#sobre">Liderança</a>
+            <a href="#propostas">Plano de Gestão</a>
+            <a href="#contato">Atendimento</a>
+        </nav>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h2>Experiência, Transparência<br><span>e Inovação</span></h2>
+        <p>A união impecável entre a vivência estratégica e operacional da Força Aérea Brasileira com a excelência técnica em Administração e Controle Interno.</p>
+        <a href="#propostas" class="btn"><i class="fas fa-chevron-down"></i> Conhecer Propostas</a>
+    </div>
+</section>
+
+<section id="sobre" class="container">
+    <div class="section-header">
+        <h2>Nossa Liderança</h2>
+        <p>Profissionais com histórico militar comprovado e compromisso inegociável com a excelência e a valorização do nosso condomínio.</p>
+    </div>
+    
+    <div class="profiles-grid">
+        <!-- Perfil Macedo -->
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-icon"><i class="fas fa-user-tie"></i></div>
+                <div class="profile-title">
+                    <h3>2S Macedo</h3>
+                    <span class="role-badge">Candidato a Presidente</span>
+                </div>
+            </div>
+            
+            <div class="time-badge"><i class="fas fa-medal" style="margin-right: 8px;"></i>12 Anos de FAB</div>
+            
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px;">Profissional com ampla experiência nos setores administrativos, estratégicos, tecnológicos e operacionais da Força Aérea Brasileira, com atuação em licitações e contratos, execução orçamentária, telemática e segurança. Possui formação multidisciplinar e experiência nos setores público e privado, reunindo conhecimentos em administração, gestão de processos, tecnologia e segurança, competências importantes para uma gestão organizada, transparente e eficiente do Residencial Nova Era.</p>
+
+            <span class="highlight"><i class="fas fa-fighter-jet" style="margin-right: 5px;"></i> Experiência Profissional — Força Aérea Brasileira</span>
+            <ul>
+                <li><strong>5 anos — Licitações e Contratos (BASC):</strong> experiência com contratos, processos administrativos e execução orçamentária.</li>
+                <li><strong>4 anos e 6 meses — Seção de Telemática (BASC):</strong> atuação na área de tecnologia da informação e comunicações.</li>
+                <li><strong>2 anos — BINFAE-RJ:</strong> experiência em atividades de segurança e apoio operacional.</li>
+                <li><strong>6 meses — 3º/8º GAV:</strong> vivência no ambiente operacional da aviação militar.</li>
+            </ul>
+
+            <span class="highlight"><i class="fas fa-graduation-cap" style="margin-right: 5px;"></i> Formação Acadêmica e Qualificações</span>
+            <ul>
+                <li>Graduação em Segurança Pública — UFF</li>
+                <li>Gestão Profissional de Condomínios</li>
+                <li>Técnico em Administração e TI Industrial</li>
+                <li>Modelagem de Processos — UFV</li>
+                <li>Segurança Eletrônica</li>
+                <li>Inteligência Artificial aplicada à Gestão</li>
+            </ul>
+
+            <span class="highlight"><i class="fas fa-building" style="margin-right: 5px;"></i> Experiência Profissional Civil</span>
+            <ul>
+                <li><strong>Prefeitura de Itaguaí:</strong> experiência no setor público municipal.</li>
+                <li><strong>Correios:</strong> experiência na área de Logística.</li>
+                <li><strong>Nokia Siemens Networks:</strong> atuação no segmento de tecnologia e telecomunicações.</li>
+            </ul>
+
+            <span class="highlight"><i class="fas fa-tasks" style="margin-right: 5px;"></i> Competências para a Gestão Condominial</span>
+            <ul>
+                <li>Administração e controle de recursos.</li>
+                <li>Acompanhamento de contratos e serviços.</li>
+                <li>Segurança patrimonial e prevenção.</li>
+                <li>Organização e melhoria de processos.</li>
+                <li>Planejamento, transparência e responsabilidade administrativa.</li>
+                <li>Gestão orientada ao diálogo, à valorização do patrimônio e ao bem-estar dos moradores.</li>
+            </ul>
+
+            <div style="margin-top: 25px; padding: 15px; background: var(--bg-page); border-radius: 8px; border-left: 3px solid var(--primary); font-size: 0.9rem; color: var(--text-muted);">
+                <em><strong>Objetivo:</strong> Colocar a experiência profissional e os conhecimentos adquiridos ao longo da carreira a serviço do Residencial Nova Era, contribuindo para uma gestão responsável, transparente e organizada, com atenção à segurança, à conservação do patrimônio, ao uso eficiente dos recursos e à qualidade de vida dos moradores.</em>
+            </div>
+        </div>
+
+        <!-- Perfil Jonathan -->
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="profile-title">
+                    <h3>2S Jonathan Santos</h3>
+                    <span class="role-badge">Candidato a Vice-Presidente</span>
+                </div>
+            </div>
+            
+            <div class="time-badge"><i class="fas fa-medal" style="margin-right: 8px;"></i>Desde 2009 na FAB</div>
+            
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 20px;">Profissional da Força Aérea Brasileira (FAB), com trajetória iniciada em 2009 e experiência em diferentes setores administrativos e estratégicos da instituição, com destaque para Controle Interno, Registro, Gestão de Processos e rotinas administrativas.</p>
+
+            <span class="highlight"><i class="fas fa-graduation-cap" style="margin-right: 5px;"></i> Formação Acadêmica</span>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Bacharel em Administração pela UNINTER, com capacitações complementares em Gestão de Riscos, Gestão e Modelagem de Processos (Bizagi/UFV), Procedimentos Administrativos, Projeto Básico e Termo de Referência, Administração de Pessoal da Aeronáutica, SCDP, Microsoft Excel, Comunicação Escrita para o Ambiente Corporativo Militar e Educação a Distância.</p>
+
+            <span class="highlight"><i class="fas fa-briefcase" style="margin-right: 5px;"></i> Experiência Profissional</span>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Atuação em organizações e setores da FAB, incluindo BINFAE-RJ, DIRENG, V COMAR, GAP-CO, GAP-RJ, BASC e GLOG-SC, com experiência em Controle Interno, Seção de Registro, Setor de Processos, Secretaria do GLOG e, atualmente, Seção de Indenização de Viagens da Base Aérea de Santa Cruz.</p>
+
+            <span class="highlight"><i class="fas fa-project-diagram" style="margin-right: 5px;"></i> Áreas de Conhecimento</span>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Administração Pública, controle e organização documental, gestão de riscos, acompanhamento de processos administrativos, melhoria de processos e procedimentos relacionados ao afastamento a serviço e à indenização de viagens.</p>
+
+            <div style="margin-top: 25px; padding: 15px; background: var(--bg-page); border-radius: 8px; border-left: 3px solid var(--primary); font-size: 0.9rem; color: var(--text-muted);">
+                <em>Reúne formação superior em Administração, experiência institucional e capacitação continuada, com foco na organização administrativa, no cumprimento de procedimentos e no aprimoramento dos processos de trabalho.</em>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="propostas" class="proposals-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Plano de Gestão Integrado</h2>
+            <p>Diretrizes claras, técnicas e executáveis para transformar nosso ambiente em um local mais seguro, transparente e estruturado.</p>
+        </div>
+        
+        <div class="proposals-grid">
+            
+            <!-- Proposta 1 -->
+            <div class="proposal-card">
+                <div class="proposal-icon-wrapper">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Infraestrutura e Bem-Estar</h3>
+                <p>Atenção prioritária às necessidades diárias dos moradores, valorizando o patrimônio com obras assertivas.</p>
+                <ul>
+                    <li><strong>Água potável:</strong> Instalação e manutenção rigorosa de bebedouros em áreas estratégicas.</li>
+                    <li><strong>Infraestrutura:</strong> Construção de banheiro na pracinha.</li>
+                    <li><strong>Manutenção Preventiva:</strong> Cronograma técnico para evitar gastos emergenciais.</li>
+                </ul>
+            </div>
+
+            <!-- Proposta 2 -->
+            <div class="proposal-card">
+                <div class="proposal-icon-wrapper">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h3>Transparência e Licitações</h3>
+                <p>Aplicação da expertise militar em contratos (BASC) e Controle Interno para blindar as contas do condomínio.</p>
+                <ul>
+                    <li><strong>Licitações justas:</strong> Cotações técnicas rigorosas com no mínimo 3 orçamentos reais.</li>
+                    <li><strong>Prestação de contas:</strong> Balancetes mensais acessíveis, transparentes e fáceis de entender.</li>
+                    <li><strong>Auditoria contínua:</strong> Revisão de contratos atuais para renegociar e cortar desperdícios.</li>
+                </ul>
+            </div>
+
+            <!-- Proposta 3 -->
+            <div class="proposal-card">
+                <div class="proposal-icon-wrapper">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Segurança e Tecnologia</h3>
+                <p>Uso da especialização em Segurança Eletrônica e Segurança Pública para proteger nossas famílias.</p>
+                <ul>
+                    <li><strong>Modernização do CFTV:</strong> Câmeras funcionais cobrindo pontos cegos.</li>
+                    <li><strong>Controle de Acessos:</strong> Aperfeiçoamento tecnológico para entrada de visitantes e serviços.</li>
+                </ul>
+            </div>
+
+            <!-- Proposta 4 -->
+            <div class="proposal-card">
+                <div class="proposal-icon-wrapper">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <h3>Gestão Administrativa Eficiente</h3>
+                <p>Modernização das rotinas usando Modelagem de Processos (UFV) e ferramentas de Inteligência Artificial.</p>
+                <ul>
+                    <li><strong>Comunicação Direta:</strong> Canal oficial rápido entre condôminos e a presidência.</li>
+                    <li><strong>Regras de Convivência:</strong> Atuação firme, justa e impessoal na aplicação do regimento.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contato" class="container" style="text-align: center; padding-bottom: 120px;">
+    <div class="section-header">
+        <h2>Canal de Atendimento</h2>
+        <p>A base de uma gestão sólida é o diálogo. Queremos ouvir suas sugestões para construirmos melhorias reais em conjunto.</p>
+    </div>
+    
+    <div style="background: var(--surface); padding: 50px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-width: 600px; margin: 0 auto; border: 1px solid var(--border-soft);">
+        <div style="width: 80px; height: 80px; background: rgba(37, 211, 102, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto;">
+            <i class="fab fa-whatsapp" style="font-size: 2.5rem; color: #25D366;"></i>
+        </div>
+        <p style="font-size: 1.8rem; margin-bottom: 5px; color: var(--primary-dark); font-family: 'Montserrat', sans-serif; font-weight: 700;">2S Macedo</p>
+        <p style="font-size: 1.3rem; color: var(--text-muted); margin-top: 0; margin-bottom: 35px; font-weight: 500;">(21) 96586-1063</p>
+        <a href="https://wa.me/5521965861063" target="_blank" class="btn" style="margin-top: 0; width: 100%;"><i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Iniciar Conversa Oficial</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 <strong>Gestão Macedo e Jonathan Santos</strong></p>
+    <p>Compromisso inegociável com a Transparência, Administração e Inovação.</p>
+</footer>
+
+</body>
+</html>
